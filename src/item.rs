@@ -25,6 +25,7 @@ use crate::extension::util::{extension_name, parse_extension};
 use crate::extension::ExtensionMap;
 use crate::guid::Guid;
 use crate::source::Source;
+use crate::torrent::Torrent;
 use crate::toxml::{ToXml, WriterExt};
 use crate::util::{decode, element_text, skip};
 
@@ -74,6 +75,7 @@ pub struct Item {
     pub itunes_ext: Option<itunes::ITunesItemExtension>,
     /// The Dublin Core extension for the item.
     pub dublin_core_ext: Option<dublincore::DublinCoreExtension>,
+    pub torrent: Option<Torrent>,
 }
 
 impl Item {
@@ -641,6 +643,7 @@ impl Item {
                     "comments" => item.comments = element_text(reader)?,
                     "pubDate" => item.pub_date = element_text(reader)?,
                     "content:encoded" => item.content = element_text(reader)?,
+                    "torrent" => item.torrent = Some(Torrent::from_xml(reader)?),
                     n => {
                         if let Some((ns, name)) = extension_name(n) {
                             parse_extension(

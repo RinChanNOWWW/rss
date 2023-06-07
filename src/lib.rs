@@ -115,6 +115,7 @@ mod image;
 mod item;
 mod source;
 mod textinput;
+mod torrent;
 
 mod error;
 mod toxml;
@@ -154,5 +155,6 @@ pub use crate::source::SourceBuilder;
 pub use crate::textinput::TextInput;
 #[cfg(feature = "builders")]
 pub use crate::textinput::TextInputBuilder;
+pub use crate::torrent::Torrent;
 
 pub use crate::error::Error;
