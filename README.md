@@ -16,6 +16,7 @@ Reading from the following RSS versions is supported:
 * RSS 0.92
 * RSS 1.0
 * RSS 2.0
+* RSS 2.0 with Mikan patch (additional `torrent` field in `item`)
 
 Writing support is limited to RSS 2.0.
 
@@ -31,6 +32,13 @@ Add the dependency to your `Cargo.toml`.
 ```toml
 [dependencies]
 rss = "2.0"
+```
+
+If you want to use MIkan patch, add additional patch in your `Cargo.toml`.
+
+```toml
+[patch.crates-io]
+rss = { git = "https://github.com/RinChanNOWWW/rss", branch = "patch-mikan" }
 ```
 
 ## Reading
