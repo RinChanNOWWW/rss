@@ -75,6 +75,7 @@ pub struct Item {
     pub itunes_ext: Option<itunes::ITunesItemExtension>,
     /// The Dublin Core extension for the item.
     pub dublin_core_ext: Option<dublincore::DublinCoreExtension>,
+    /// The torrent information for the item.
     pub torrent: Option<Torrent>,
 }
 
