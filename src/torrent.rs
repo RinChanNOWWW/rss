@@ -27,7 +27,7 @@ pub struct Torrent {
 
 impl Torrent {
     /// Builds an Torrent from source XML
-    pub fn from_xml<'s, R: BufRead>(reader: &mut Reader<R>) -> Result<Self, Error> {
+    pub fn from_xml<R: BufRead>(reader: &mut Reader<R>) -> Result<Self, Error> {
         let mut torrent = Torrent::default();
         let mut buf = Vec::new();
 
