@@ -34,11 +34,16 @@ Add the dependency to your `Cargo.toml`.
 rss = "2.0"
 ```
 
-If you want to use MIkan patch, add additional patch in your `Cargo.toml`.
+The patch will be developed on the `patch-mikan` branch.
+
+If you want to use Mikan patch, add additional patch in your `Cargo.toml`.
 
 ```toml
 [patch.crates-io]
 rss = { git = "https://github.com/RinChanNOWWW/rss", branch = "patch-mikan" }
+# or
+[dependencies]
+rss-for-mikan = "2.0"
 ```
 
 ## Reading
